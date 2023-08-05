@@ -29,6 +29,7 @@ let surname2 = "Smith"
 //--- OK ---
 let x: Int
 x = 5
+// print(x)
 //--- ERROR ---
 // let y: Int
 // print(y)
