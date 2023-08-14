@@ -3,25 +3,25 @@ import Foundation
 //--- 2. BASIC TYPES ---
 
 // let means constant value
-let name: String = "ta2lsm"
-let age: Int = 39
-
-// type safety: name can not to be assigned as a number
-// name = 36
-
-// var means variable value
-var year: Int = 2022
-year = 1983
-
-// "Double" expression also not needed
-let pi: Double = 3.14159265359
-
-// Bool
-let isStarted: Bool = true
-
-// type inference: no need to declera as a string
-let name2 = "John 😍"
-let surname2 = "Smith"
+//let name: String = "ta2lsm"
+//let age: Int = 39
+//
+//// type safety: name can not to be assigned as a number
+//// name = 36
+//
+//// var means variable value
+//var year: Int = 2022
+//year = 1983
+//
+//// "Double" expression also not needed
+//let pi: Double = 3.14159265359
+//
+//// Bool
+//let isStarted: Bool = true
+//
+//// type inference: no need to declera as a string
+//let name2 = "John 😍"
+//let surname2 = "Smith"
 
 //print("Person:", name, name2, age, year)
 //print("Name:", name, "Age:", age, "Birthyear:", year)
@@ -29,53 +29,53 @@ let surname2 = "Smith"
 //print(NSString(format: "%02.3f", pi))
 
 //--- OK ---
-let x: Int
-x = 5
-// print(x)
-//--- ERROR ---
-// let y: Int
-// print(y)
-
-let num1 = 5
-let num2 = 2
-
-num1 + num2
-num1 - num2
-num1 * num2
-num1 / num2
-let result = Double(num1) / Double(num2)
-//print(result)
-
-//--- STRING ---
-let description = """
-this is a
-multiline
-string
-"""
-// print(description)git commit cmd line codes
-
-
-// concatanation
-var fullname2 = name2 + " " + surname2
-//print(name2)
-//print(fullname2)
-
-fullname2.count
-fullname2.isEmpty
-fullname2.append(" ___")
-fullname2 += "abc"
-
-// string interpolation
-let count = 33
-//print("Count value is: \(count)")
-//print("Some strings: \(2 * 3), \(123.45), \(true)")
-
-
-
-//--- 3. CONTROL STATEMENTS ---
-
-let isCompleted = false
-let text01 = ""
+//let x: Int
+//x = 5
+//// print(x)
+////--- ERROR ---
+//// let y: Int
+//// print(y)
+//
+//let num1 = 5
+//let num2 = 2
+//
+//num1 + num2
+//num1 - num2
+//num1 * num2
+//num1 / num2
+//let result = Double(num1) / Double(num2)
+////print(result)
+//
+////--- STRING ---
+//let description = """
+//this is a
+//multiline
+//string
+//"""
+//// print(description)git commit cmd line codes
+//
+//
+//// concatanation
+//var fullname2 = name2 + " " + surname2
+////print(name2)
+////print(fullname2)
+//
+//fullname2.count
+//fullname2.isEmpty
+//fullname2.append(" ___")
+//fullname2 += "abc"
+//
+//// string interpolation
+//let count = 33
+////print("Count value is: \(count)")
+////print("Some strings: \(2 * 3), \(123.45), \(true)")
+//
+//
+//
+////--- 3. CONTROL STATEMENTS ---
+//
+//let isCompleted = false
+//let text01 = ""
 
 // needs to be used >> "{}"
 //if isCompleted {
@@ -169,10 +169,10 @@ let text01 = ""
 
 //--- 4. OPTIONALS ---
 
-let age2: Int?          // it could be an integer or nil (null)
+//let age2: Int?          // it could be an integer or nil (null)
 //let text02: String?     // it could be a string or nil (null)
 //
-age2 = 5        // optional(int) -> int 5
+//age2 = 5        // optional(int) -> int 5
 
 //if true {
 //    text02 = "test"
@@ -229,13 +229,171 @@ age2 = 5        // optional(int) -> int 5
 //print("\(num4)")
 
 // impicitly unwrapped optional ( RISKY! )
-var num4: Int!
-
-num4 = 5
-num4 + 1        // OK
+//var num4: Int!
+//
+//num4 = 5
+//num4 + 1        // OK
 
 //num4 = nil
 //num4 + 7        // CRASH !!
 
 
-//--- 5. ENUMS ---
+//--- 5. ENUMS (Enumarations) ---
+//enum Direction {
+////    case north
+////    case west
+////    case east
+////    case south
+//  case north, west, east, south
+//}
+//// if some other values would be added to this enum above in the future
+//// switch-case structure that has no "default" field in the code will be
+//// in an error mode when compiled. User can easily find those codes...
+//
+////var direction: Direction = .south
+//var yön1: Direction = Direction.east
+//var yön2 = Direction.west
+//var yön3: Direction = .south
+//yön3 = .north
+//print(yön1, yön2, yön3)
+
+//if yön3 == .north {
+//    print("Kuzeye gidiliyor...")
+//}
+//
+//switch yön1 {
+//case .east:
+//    print("Doğuya gidiliyor...")
+//case .north:
+//    print("Kuzeye gidiliyor...")
+//case .west:
+//    print("Batıya gidiliyor...")
+//case .south:
+//    print("Güneye gidiliyor...")
+//}
+
+//switch yön1 {
+//case .east, .west:
+//    print("Yatayda gidiliyor...")
+//case .south, .north:
+//    print("Dikeyde gidiliyor...")
+//// no need to use default because we are using every possible cases above
+//default:
+//    print("Ooopss...")
+//}
+
+// feature extending (CaseIterable)
+//enum UserRole: CaseIterable {
+//    case admin, user, restricted
+//}
+
+//for role in UserRole.allCases {
+//    print(role)
+//}
+
+//enum UserRole: Int, CaseIterable {
+//enum UserRole: Int {
+//    case admin = 2, user, restricted    // admin = 2, user = 3, restricted = 4
+//}
+//
+//enum Gender: String {
+//    case male, female, nonbinary        // male = "male", female = "female", nonbinary = "nonbinary"
+//}
+//
+//let role = UserRole(rawValue: 3)    // let role: UserRole? = UserRole(rawValue: 3)
+//print(role)     // Optional(__lldb_expr_18.UserRole.user)
+//let role2 = UserRole(rawValue: 9)
+//print(role2)    // nil
+//
+//role?.rawValue              // 3
+//UserRole.admin.rawValue     // 0
+//
+//let gender = Gender(rawValue: "female")
+////let gender = Gender(rawValue: "female")!    // forced unwrapping
+//print(gender)               // Optional(__lldb_expr_20.Gender.female)
+//print(gender!)              // female
+
+
+
+//enum UserRole {
+//    case admin(Int)
+//    case user
+//    case restricted(reason: String)         // reason is an associated value (no need to write "reason" by the way)
+//}
+//
+//let role = UserRole.restricted(reason: "kicked")        // user restricted because of banned
+////print(role)     // restricted(reason: "banned")
+//
+//switch role {
+//case .admin:
+//    print("admin")
+//case .admin(let level) where level > 1:
+//    print("super admin")
+//case .user:
+//    print("user")
+////case .restricted:
+////    print("restricted")
+//
+////case .restricted(reason: let reason):
+////    print("restricted because \(reason)")       // \(reason) >> interpolation
+////case .restricted(reason: let reason):
+////    if(reason == "kicked") {
+////        print("Restricted. Need operation...")
+////    } else if (reason == "banned") {
+////        print("BANNED")
+////    }
+//
+//case .restricted(reason: let reason) where reason == "banned":
+//    print("BANNED")
+//
+////case .restricted(reason: let reason) where reason == "kicked":
+////    print("Restricted. Need operation...")
+////default:
+////    break
+//
+//case .restricted:
+//    print("Restricted. Need operation...")
+//}
+
+
+//enum UserRole {
+//    case admin
+//    case user
+//    case restricted(reason: String)         // reason is an associated value (no need to write "reason" by the way)
+//
+//    // computed property
+//    var isBanned: Bool {
+//        switch self {
+//        case .restricted(reason: let reason) where reason == "banned":
+//            return true
+//        default:
+//            return false
+//        }
+//    }
+//
+//    // functions ...
+//}
+//
+//let role = UserRole.admin
+//role.isBanned               // false
+//
+//let role2 = UserRole.restricted(reason: "banned")
+//role2.isBanned              // true
+
+
+// Optionals built on enums
+let age: Int? = 39
+
+//if let age = age {
+//    print("age = \(age)")
+//}
+
+switch age {
+case .none:
+    print("nil")        // optional
+//case .some(_):            // _ means don't cared value
+case .some(let val):
+    print(val)
+}
+
+//--- 6. TUPLES ---
