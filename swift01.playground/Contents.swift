@@ -238,7 +238,9 @@ import Foundation
 //num4 + 7        // CRASH !!
 
 
+
 //--- 5. ENUMS (Enumarations) ---
+
 //enum Direction {
 ////    case north
 ////    case west
@@ -382,18 +384,44 @@ import Foundation
 
 
 // Optionals built on enums
-let age: Int? = 39
-
-//if let age = age {
-//    print("age = \(age)")
+//let age: Int? = 39
+//
+////if let age = age {
+////    print("age = \(age)")
+////}
+//
+//switch age {
+//case .none:
+//    print("nil")        // optional
+////case .some(_):            // _ means don't cared value
+//case .some(let val):
+//    print(val)
 //}
 
-switch age {
-case .none:
-    print("nil")        // optional
-//case .some(_):            // _ means don't cared value
-case .some(let val):
-    print(val)
-}
+
 
 //--- 6. TUPLES ---
+
+//var error: (Int, String) = (404, "Not Found")
+
+// nested tuple
+//let nestedTuple = (1, "", true, 3.14, (404, "not found"), error)        // do not use so many values in tuple
+//let tuple = (404, "not found", true, 123, ["a", "b"])
+
+//
+//error.0             // 404
+//
+//let (code, message) = error
+//print(code, message)
+//
+//let(code1, _) = error
+//print(code1)
+//
+//error.0 = 500
+//error.1 = "Internal server error"
+//print(error.0, error.1)
+
+
+//--- 7. ARRAY & SET ---
+
+
