@@ -422,6 +422,119 @@ import Foundation
 //print(error.0, error.1)
 
 
+
 //--- 7. ARRAY & SET ---
 
+// ARRAY
 
+//let numbers: [Int] = [34, 63, 743, 545]             // literal syntax
+//var students: [String] = ["ali", "veli", "ayse"]
+//print(students[5])        // invalid index causes crash! - students[2]: subscript syntax
+
+// Never crushes !!!
+//if students.count > 1 {
+//    print(students[1])
+//}
+
+//var items = Array(repeating: "ta2lsm", count: 10)
+//print(items.count, items)
+//
+//items[0] = "test"
+//print(items.count, items)
+
+//items.append("added item")                 // add to the end
+//items += ["added item2", "a", "b", "c"]     // add to the end
+//items.append(contentsOf: students)          // add students to the end of the items
+////print(items.count, items)
+//
+//items.insert("inserted item", at: 2)        // add to the index 2
+////print(items.count, items)
+//
+// safe removing
+//if items.count > 3 {
+//    items.remove(at: 3)                       // remove index 3
+//    //print(items.count, items)
+//}
+//
+//while(!items.isEmpty) {
+//    items.remove(at: 0)
+//    print(items.count, items)
+//}
+
+//var objects = Array<Int>()          // creates empty int array
+//var objects [Int] = Int()
+
+//students.append(contentsOf: ["sema", "fatma"])
+//students[1...2] = ["x"]                         // replaces between index 1 to 2 with "x"
+//students[2...3] = []                            // ereases between index 2 to 3
+//print(students)
+
+// iteration
+//for student in students {
+//    print(student)
+//}
+
+//for (i, student) in students.enumerated() {
+////    print("\(i). index is", student)
+//    print("\(i). index is \(student)")
+//}
+
+//for index in 0..<students.count {
+//    print("\(index). index is \(students[index])")
+//}
+
+//students.forEach { student in
+//    print(student)
+//}
+
+
+// SET
+
+// has unique items
+// unordered
+
+// all of the arrays are same below
+//var students = ["ali", "veli", "ayse"]
+//var students2: Array<String> = ["ali", "veli", "ayse"]
+//var students3: [String] = ["ali", "veli", "ayse"]
+
+// some string array methods are different and some of them are not available when using "SET"
+// there is no index because sets are unordered
+
+//var students4: Set<String> = ["ali", "veli", "ayse", "ali"]
+//print(students4)        // will be printed as unordered and has only single "a"
+
+//for student in students4 {
+//    if student == "c" {
+//        print("veli bulundu")
+//    }
+//}
+
+//students4.insert("fatma")       // inserted: true
+//students4.insert("veli")        // inserted: false
+// insert method is something like that
+//if students.contains("veli") {
+//    return
+//}
+//print(students4)
+
+//var emptySet: Set<Int> = []
+//print(emptySet)
+
+//var items1: Set<Int> = [1, 2, 25, 37, 235]
+//let items2: Set<Int> = [5, 90, 3, 2]
+//let items3: Set<Int> = [2, 37, 25]
+//
+//items3.isSubset(of: items1)             // true
+//items1.isSuperset(of: items3)           // true
+//items1.intersection(items2)             // 2
+//items2.union(items1)                   // 5, 2, 3, 90, 25, 37, 235, 1
+//
+//// In swift generally "...ing" adding means:
+//items1.subtract(items3)                // items1 = [1, 235]
+//var items4 = items1.subtracting(items3)  // 1, 235
+//print(items4)
+
+
+
+//--- 8. DICTIONARY ---
