@@ -623,3 +623,138 @@ import Foundation
 
 //--- 9. FUNCTIONS ---
 
+// Functions are types...
+
+//func greetMe() {
+//    let text = "Hello!"
+//    print(text)
+//}
+//greetMe()
+
+//func greetMe(name: String) {
+//    print("Hello \(name)!")
+//}
+//greetMe(name: "TA2LSM")
+
+//func greetMe(name: String, age: Int? = nil) {
+//    print("Hello \(name)! You're \(age) years old...")
+//}
+//greetMe(name: "TA2LSM", age: 40)
+//greetMe(name: "TA2LSM")
+
+//func sum(x: Int, y: Int) -> Int {
+////    var sum = x + y
+////    return sum
+//    return x + y
+//}
+//print("Sum:", sum(x: 3, y: 5))        // parameters must be given with the definition order
+//let sum: Int = sum(x: 123, y: 45)
+//print(sum)
+
+//func sum(number1 x: Int, number2 y: Int) -> Int {       // number1 and number2 are internal labels
+//    return x + y
+//}
+//sum(number1: 45, number2: 35)
+
+//func sum(_ x: Int, _ y: Int) -> Int {                   // there is no external label
+//    return x + y
+//}
+//sum(45, 35)
+
+//let feet = ["human": 2, "chicken": 2, "cow": 4]
+//func count(item: String) -> Int? {                  // item is an internal and external label
+//    return feet[item]
+//}
+//count(item: "human")
+//count(item: "fish")
+
+//func count2(creature item: String) -> Int? {        // item is an internal label
+//    return feet[item]
+//}
+//count2(creature: "human")
+
+
+// NESTED FUNCTIONS
+//let personList = [("Ayse", 10), ("Volkan", 34)]
+//func greetAll(people: [(String, Int)]) {
+//    // in local scope
+//    func greet(name: String, age: Int?) {
+//        print("Hello \(name)! You're \(age) years old...")
+//    }
+//
+//    for person in people {
+//        greet(name: person.0, age: person.1)
+//    }
+//}
+//greetAll(people: personList)
+
+// inout parameter
+//func increment(x: inout Int, by b: Int) {
+//    x += b
+//}
+//var val = 3
+//increment(x: &val, by: 4)       // needs val's pointer value
+//print(val)
+
+//func multiply(a: Int, b:Int) -> Int {
+//    return a * b
+//}
+//// (Int, Int) -> Int
+//let myFunc = multiply
+//myFunc(23, 7)
+
+//func square(a: Int) -> Int {
+//    return a * a
+//}
+//
+//func getNegative(a: Int) -> Int {
+//    return a * -1
+//}
+
+//func convert(list: [Int]) -> [String] {
+//    var retList: [String] = []
+//
+//    for item in list {
+//        let value = square(a: item)
+//        retList.append("\(value)")
+//    }
+//
+//    return retList
+//}
+//convert(list: [3, 4, 5])
+
+//func convert(list: [Int], convFunc: (Int) -> Int) -> [String] {
+//    var retList: [String] = []
+//
+//    for item in list {
+//        let value = convFunc(item)
+//        retList.append("\(value)")
+//    }
+//
+//    return retList
+//}
+//print(convert(list: [3, 4, 5], convFunc: square))
+//print(convert(list: [3, 4, 5], convFunc: getNegative))          // do not call function like that --> getNegative(a: <#T##Int#>)
+
+//enum Direction {
+//    case north, west, south, east
+//
+//    func printDirection() {
+//        switch self {
+//        case .north:
+//            print("N")
+//        case .west:
+//            print("W")
+//        case .south:
+//            print("S")
+//        case .east:
+//            print("E")
+//        }
+//    }
+//}
+//let myWay = Direction.east
+//myWay.printDirection()
+
+
+
+//--- 10.  ---
