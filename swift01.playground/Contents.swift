@@ -490,7 +490,7 @@ import Foundation
 
 // SET
 
-// has unique items
+// has unique values
 // unordered
 
 // all of the arrays are same below
@@ -538,3 +538,88 @@ import Foundation
 
 
 //--- 8. DICTIONARY ---
+
+// access with key value
+// has unique values
+// unordered
+
+// these methods are not available because of unordered type: append, insert ...etc
+
+//var emptyDictionary: [String: String] = [:]                             // empty dictionary
+//var dictionary: [String: String] = ["name": "isim", "book": "kitap"]   // [String: String] not needed
+////print(dictionary)
+//
+////var ages = ["ahmet": 13, "ayse": 20, "ali": 17]  // [String: Int]
+//var ages = [
+//    "ahmet": (13, "Istanbul"),
+//    "ayse": (20, "Izmir"),
+//    "ali": (17, "Mugla")
+//]  // [String: Tuple] tuples must be the same type Tuple >> (Int, String)
+////print(ages)
+//
+//var notlar: [String: [Int]] = [
+//    "ahmet": [50, 20, 90],
+//    "ayse": [30, 50, 50],
+//    "ali": [70, 65, 95]
+//]
+//
+//var cityCodes: [Int: String] = [
+//    1: "Adana",
+//    6: "Ankara",
+//    34: "Istanbul",
+//    35: "Izmir",
+//]
+//print(cityCodes)
+
+//for code in cityCodes {
+//    print(code)
+//}
+
+//for value in cityCodes.enumerated() {
+//    print(value.element)
+//    print(value.offset)
+//    print(value.self)
+//}
+
+//let city = cityCodes[34]
+//print(city)                   // Optional("Istanbul") because it wouldn't be 34 in the dictionary
+//print(cityCodes[34]!)         // not recommended
+
+//if let city = cityCodes[34] {
+//    print(city)             // Istanbul if there would be 34 in the dictionary
+//}
+
+//cityCodes[7] = "Bursa"
+//print(cityCodes)
+//cityCodes[7] = "Antalya"
+//print(cityCodes)
+//
+//dictionary["mouse"] = "fare"
+//dictionary["name"] = "ad"
+//print(dictionary)
+
+//dictionary.removeValue(forKey: "mouse")         // delete key "mouse". returns "mouse" when succeeded
+////dictionary.removeAll()
+//print(dictionary)
+//
+//let result = dictionary.removeValue(forKey: "mouse")
+//if result == nil {
+//    print("key not found")
+//}
+
+//let keys = Array(dictionary.keys)               // ordered but randomly everytime
+//let values = Array(dictionary.values)
+
+//for key in keys {
+//    //print(dictionary[key])
+//    let value = dictionary[key]
+//    print(value)
+//}
+
+//let random = dictionary.randomElement()
+//print(random)
+
+
+
+//--- 9. FUNCTIONS ---
+
