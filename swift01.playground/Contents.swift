@@ -757,4 +757,151 @@ import Foundation
 
 
 
-//--- 10.  ---
+//--- 10. CLOSURES ---
+
+//let closure = {
+//    parameters -> return_type in
+//    //... code ...
+//}
+
+//let closure = {
+//    print("Hello")
+//}
+//closure()           // (void) -> (void)
+
+//let closure = { (value: String) -> Int in
+//    print("Hello -> \(value)")
+//    return 5
+//}
+//let retVal = closure("32")
+//print(retVal)
+
+
+//var name = "TA2LSM"
+////let closure = {
+////    print(name)
+////}
+////closure()
+////name = "test"
+////closure()
+
+
+//let closure = { [name] in // capture //
+//    print(name)
+//}
+//name = "test"
+//closure()           // prints "TA2LSM"
+//print(name)          // prints "test"
+
+
+//let closure = { (value: String) in
+//    print("Hello -> \(value)")
+//}
+//closure("TA2LSM")
+
+
+//var square = { (number: Int) -> Int in
+//    return number * number
+//}
+//square(3)
+
+//let names = ["ali", "veli", "ayse"]
+////let orderClosure = { (str1: String, str2: String) -> Bool in
+////    return str1 < str2
+////}
+////names.sorted(by: orderClosure)
+//
+//names.sorted(by: {(str1, str2) -> Bool in
+//    return str1 < str2
+//})
+//// OR
+//names.sorted(by: {
+//    return $0 < $1
+//})
+//// OR
+//names.sorted(by: {
+//    $0 < $1           //$0 means first parameter
+//})
+//// OR
+//names.sorted(by: <)
+
+
+// Trailing Closures
+
+//func myFunc(closure: (String) -> Void) {
+//    closure("TA2LSM")
+//}
+//
+//myFunc(closure: { val in
+//    print(val)
+//})
+//// OR
+//myFunc {
+//    print($0)
+//}
+
+//let names = ["ali", "veli", "ayse"]
+//names.contains("ali")
+//names.contains(where: { value in
+//    return value.count == 3
+//})
+//// OR
+//names.contains{ $0.count == 3 }
+
+
+//func download(onSuccess: () -> Void, onError: (String) -> Void) {
+//    let isSuccess = false;
+//
+//    if(isSuccess == true) {
+//        onSuccess()
+//    } else {
+//        onError("failed")
+//    }
+//}
+//download(onSuccess: { print("success") }, onError: { message in print(message) })
+
+
+// before this point all closures are non-escaping
+// escaping closure
+
+//func download(onSuccess: @escaping() -> Void) {
+//    onSuccess()
+//    print("3")
+//}
+//print("1")
+//download( onSuccess:{ print("success") })
+//print("2")
+
+
+
+//--- 11. FUNCTIONAL SWIFT ---
+
+// 1st class citizen: Int String
+
+//func hello( name: String ) -> String {
+//    return "Hello \(name)!"
+//}
+//hello(name: "TA2LSM")
+//let myFunc: (String) -> String = hello          // like function pointer
+
+
+//func add(_ x: Int, _ y: Int) -> Int {
+//    return x + y
+//}
+//
+//func sub(val : Int,  subVal: Int) -> Int {
+//    return val - subVal
+//}
+//
+//// higher order function: takes function as a parameter, returns function
+//func myFunc(id: String) -> (Int, Int) -> Int {
+//    if id == "+" {
+//        return add
+//    } else {
+//        return sub
+//    }
+//}
+//let result = myFunc(id: "-")
+//result(10, 4)
+
+// resume from 5:58
