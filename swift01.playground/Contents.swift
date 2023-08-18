@@ -904,4 +904,70 @@ import Foundation
 //let result = myFunc(id: "-")
 //result(10, 4)
 
-// resume from 5:58
+
+// Functional Programming
+let students = [
+    "ali": [40, 60, 90],
+    "ayse": [95, 75, 40],
+    "veli": [45, 15, 20],
+]
+//var passedStudents: [String] = []
+
+// 1st solution -> not immutable
+//
+//for student in students {
+//    var mean: Int = 0
+//
+//    for note in student.value {
+//        mean += note
+//    }
+//    mean /= student.value.count
+//
+//    if mean >= 50 {
+//        passedStudents.append(student.key)
+//    }
+//}
+//print(passedStudents)
+
+
+// 2nd solution
+//
+// map, filter, reduce
+//let uppercaseNames = students.map { (key, values) in
+//    print(key, ":", values)
+//    return key.uppercased()
+//}
+//print(uppercaseNames)
+
+//let list = [15, 25, 35, 45]
+////let filtered = list.filter { item in
+////    return item > 30
+////}
+//// OR
+//let filtered = list.filter { $0 > 30 }
+//print(filtered)
+
+// start as (0)
+//let sum = list.reduce(0) { partialResult, item in
+//    return partialResult + item     // result will sstore in "partialResult"
+//}
+
+//let studentNames = students.reduce("") { partialResult, item in
+//    return partialResult + "," + item.key
+//}
+
+let passedStudents = students
+    .filter { element in
+//        let sum = element.value.reduce(0) { partialResult, val in
+//            partialResult + val
+//        }
+        let sum = element.value.reduce(0) { $0 + $1 }
+        let average = sum / element.value.count
+
+        return average > 50
+    }
+//    .map { item in
+//    return item.key
+//    }
+    .map { $0.key }
+print(passedStudents)
